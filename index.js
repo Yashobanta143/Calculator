@@ -21,7 +21,7 @@ function calculate(){
     try {
         evalColor()
         display2.value = eval(display.value);
-    } catch () {
+    } catch (_error) {
         errorColor()
         display.value = "";
         display2.value = "Error";     
@@ -67,7 +67,7 @@ function sqRoot() {
         display2.value = display.value;
     }
     } 
-    }catch () {
+    }catch (_error) {
         errorColor();
         display.value = "Error";
     }
