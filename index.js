@@ -21,7 +21,7 @@ function calculate(){
     try {
         evalColor()
         display2.value = eval(display.value);
-    } catch (error) {
+    } catch () {
         errorColor()
         display.value = "";
         display2.value = "Error";     
