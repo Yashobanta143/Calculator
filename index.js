@@ -51,7 +51,7 @@ function showOnDisplay(input){
 //Square root function:
 function sqRoot() {
     try {
-        let value = display.value;
+        const value = display.value;
         if (value ==""){
             console.log("null")
             display.value = "";
