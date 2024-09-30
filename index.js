@@ -30,7 +30,7 @@ function calculate(){
 
 
 //clear Display
-function clearDisplay(){
+function _clearDisplay(){
     display.value = "";
 }
 
@@ -49,7 +49,7 @@ function showOnDisplay(input){
 }
 
 //Square root function:
-function sqRoot() {
+function _sqRoot() {
     try {
         const value = display.value;
         if (value ==""){
