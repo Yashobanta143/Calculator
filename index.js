@@ -1,3 +1,4 @@
+// Getting DOM elements
 const display = document.getElementById("display");
 const display2 = document.getElementById("display2");
 display2.value = display.value;
@@ -55,18 +56,18 @@ function sqRoot() {
             console.log("null")
             display.value = "";
         } else {
-    let root = Math.pow(value, 1/2);
-    if (isNaN(root)) {
+    const sq_root = Math.pow(value, 1/2);
+    if (isNaN(sq_root)) {
         display.value = "";
         errorColor();
         display2.value = "Error";
     } else {
-        display.value = root.toFixed(3);
+        display.value = sq_root.toFixed(3);
         evalColor();
         display2.value = display.value;
     }
     } 
-    }catch (error) {
+    }catch () {
         errorColor();
         display.value = "Error";
     }
