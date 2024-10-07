@@ -1,0 +1,43 @@
+name: CalculatorApp
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and minify CSS
+        run: |
+          npm run build-css
+          npm run minify-css
+
+      - name: Lint JavaScript code
+        run: npm run lint
+
+      - name: Test JavaScript code
+        run: npm run test
+
+      - name: Deploy to GitHub Pages
+        uses: gh-pages/deploy@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          folder: dist
+
+      - name: Verify deployment
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" (link unavailable)
+          if [ $? -ne 200 ]; then
+            echo "Deployment failed"
+            exit 1
+          fi
+
