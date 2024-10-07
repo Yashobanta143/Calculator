@@ -21,7 +21,7 @@ function calculate(){
     try {
         evalColor()
         display2.value = eval(display.value);
-    } catch (_error) {
+    } catch (error) {
         errorColor()
         display.value = "";
         display2.value = "Error";     
@@ -30,7 +30,7 @@ function calculate(){
 
 
 //clear Display
-function _clearDisplay(){
+function clearDisplay(){
     display.value = "";
 }
 
@@ -49,25 +49,25 @@ function showOnDisplay(input){
 }
 
 //Square root function:
-function _sqRoot() {
+function sqRoot() {
     try {
         const value = display.value;
         if (value ==""){
             console.log("null")
             display.value = "";
         } else {
-    const sq_root = Math.pow(value, 1/2);
-    if (isNaN(sq_root)) {
+    const rootValue = Math.pow(value, 1/2);
+    if (isNaN(rootValue)) {
         display.value = "";
         errorColor();
         display2.value = "Error";
     } else {
-        display.value = sq_root.toFixed(3);
+        display.value = rootValue.toFixed(3);
         evalColor();
         display2.value = display.value;
     }
     } 
-    }catch (_error) {
+    }catch (error) {
         errorColor();
         display.value = "Error";
     }
